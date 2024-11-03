@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Concertify</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="text-center" style="background: linear-gradient(to bottom right, #007bff, #ffffff); height: 100vh; position: relative;">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: rgba(3, 55, 134, 0); width: 100%;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/" style="color: white; font-weight: bold;">
+                <img src="assets/img/icon.png" alt="Concertify Icon" style="width: 50px; height: 50px; margin-right: 5px;">
+                Concertify
+            </a>
+            <button class="navbar-toggler" type="button" style="font-family: 'Poppins', sans-serif;" data-bs-toggle="collapse" data-bs-target="#navcol-1" aria-controls="navcol-1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <!-- Add any navbar items here if needed -->
+            </div>
+        </div>
+    </nav>
+    <h1 class="mb-4" style="color: white">Upcoming Concerts For Your Favorite Artists</h1>
+
+
+    
+  <div class="container">
+      <div class="row justify-content-center">
+        <% let count = 0; %>
+          <% concertData.forEach((event, index) => { %>
+            <% event.forEach((concert, index) => { %>
+                <div class="col-md-4 d-flex align-items-stretch">
+                    <div class="card-container">
+                        <div class="card d-flex flex-column">
+                            <% let link = "/bio?artist=" + artistNames[count++]%> 
+                            <a style="text-decoration: none;" href=<%= link %> target="_blank">
+                                
+                            <img src=<%= concert.images[0].url %> alt="Artist Image">
+                            <h2><%= concert.name %></h2>
+                            <% if (concert._embedded != undefined) { %>
+                                <% concert._embedded.venues.forEach((venue) => { %>
+                                    <h3 style="color:#5e5d5d;"><%= venue.name %></h3>
+                                <% }); %>
+                            <% } %>
+                                </a>
+                            <div class="mt-auto">
+                                <% if (concert.url != undefined) { %>
+                                    <button class="btn btn-primary" onclick="window.open('<%= concert.url %>', '_blank')">Purchase Ticket</button>
+                                <% } else { %>
+                                    <button class="btn btn-primary" disabled>Ticket Unavailable</button>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <% if ((index + 1) % 3 === 0) { %>
+                  </div><div class="row justify-content-center">
+              <% } %>
+              <% }); %>
+          <% }); %>
+      </div>
+  </div>
+  
+    <script> 
+        var cards = document.querySelectorAll('.card');
+        [...cards].forEach((card)=>{
+        card.addEventListener( 'click', function() {
+            card.classList.toggle('is-flipped');
+        });
+        });
+    </script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

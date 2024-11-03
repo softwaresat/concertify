@@ -10,8 +10,6 @@ app.set('view engine', 'ejs');
 var randomstring = require("randomstring");
 const request = require('request')
 
-var client_id = 'd27f011da8ff4ad2b6ce571b5eda7745';
-const client_secret = 'e71ebe6b3a064946ac60d895056f005d';
 
 
 var redirect_uri = 'http://localhost/callback';

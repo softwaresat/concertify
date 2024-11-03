@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Poppins","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  padding-top: 15px;
+}
+
+/* General Body Styling */
+html {
+  height: 100%;
+  background: linear-gradient(to bottom right, #007bff, #ffffff);
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  color: #343a40;
+  margin: 0;
+  padding: 20px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.masthead {
+  min-height: 100vh; /* Ensures the header fills the viewport height */
+}
+
+/* Header */
+
+h1#text-center {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+/* Button Styling */
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .card-group {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  h1#text-center {
+    font-size: 2em;
+  }
+}
+
+body {
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+}
+
+#text-center {
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Card Styling */
+
+.card-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  cursor:pointer;
+}
+
+.card-body {
+  padding: 10px;
+  text-align: left;
+}
+
+.card-text {
+  font-size: 1em;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  margin-top: 20px;
+  
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin: 0;
+  color: #333;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.card button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+
+.spotify-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #1ED760;
+  color: white;
+  border-radius: 25px;
+  padding: 15px 40px; /* Increased padding for a larger button */
+  font-size: 1.5rem; /* Increased font size */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.2s;
+  margin-top: 20px; /* Space above the button */
+}
+
+.spotify-button svg {
+  margin-right: 12px;
+}
+
+/* Darken the button on hover */
+
+.spotify-button:hover {
+  background-color: #2cb850;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.spotify-button:active {
+  background-color: #2cb860;
+  color: #f4f4f4;
+}
+
+.navbar {
+  padding: 1rem;
+  margin-bottom:30px;
+}
+
+.navbar-brand {
+  font-size: 1.8em; /* Increase brand name font size */
+}
+
+.card button{
+  width: 100%;
+}
+.nav-link {
+  font-size: 1.1em; /* Increase font size for nav links */
+  padding: 15px; /* Add padding for better spacing */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #f8f9fa; /* Set color of nav links */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ff4b5c; /* Change color on hover */
+}
